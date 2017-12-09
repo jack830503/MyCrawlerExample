@@ -110,6 +110,7 @@ public class AppleRealtime {
 		// 遂行印出排序後的新聞
 		for(String key: orderedNew.keySet() ){
 			System.out.println( orderedNew.get(key) );
+			//改檔案
 		}
 		
 	}
