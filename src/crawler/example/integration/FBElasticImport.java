@@ -21,14 +21,14 @@ public class FBElasticImport {
     static int days = 10;
     // 每日抓取文章上限 (上限1000)
     static int maxPosts = 10;
-    static String access_token = "EAACEdEose0cBAINrCSZBbWHGyPLD7Xnz4mqIT2uXRkE8IxCk3rGtaPRPZAQQIelAxKMZBUbEaOewEWZCHE9ZACt14Bf8gOrRpNcZBQT8msfVLNQwRAMRNpQWQ40ViVqZAcybV3ikrZBLzqv88lhkln1xz5U8JggEnaj23Iv1kKB1qqWq0xwrb6OaLZA5uZAQHq5R8ZD";
+    static String access_token = "EAACEdEose0cBALXZAY3Lqxkbg4SW1IZBwQmHiZAIT3itfbUjlDVQYpjKZAeZCIgcwBd9qyG3DzNxQrOxXpDYM0gf1oZBnWxhp0NynXkeYl7cq3SZBrEzdaQWC86aY0bzrWH30kCdSqcTtbBbH8YSreHdO2SZCwo8WKLcPYImNZARK4G3GtN6mpZC5Oq9lY72RGxpbvT67sUZAWAtQZDZD";
 
     public static void main(String[] args) {
 
         for (long datatime = start ; datatime > start-86400*days ;datatime-=86400) {
             String uri =
                     "https://graph.facebook.com/v2.6"
-                            + "/"+pageName +"/posts?fields=message,comments.limit(0).summary(true),likes.limit(0).summary(true),created_time&since="+(datatime-3600*8)+"&until="+datatime+"&limit="+maxPosts
+                            + "/"+pageName +"/posts?fields=message,comments.limit(0).summary(true),likes.limit(0).summary(true),created_time&since="+(datatime-3600*24)+"&until="+datatime+"&limit="+maxPosts
                             + "&access_token="+access_token;
 
 
