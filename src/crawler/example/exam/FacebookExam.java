@@ -25,8 +25,8 @@ public class FacebookExam {
 
 		String uri = 
 				"https://graph.facebook.com/v2.6"
-				+ "/search?q="
-				+ "&access_token=";
+				+ "/kobeengineer/posts?fields=id,link,message,created_time,likes.limit(0).summary(total_count),reactions.limit(0).summary(total_count)"
+				+ "&access_token=EAACEdEose0cBAINrCSZBbWHGyPLD7Xnz4mqIT2uXRkE8IxCk3rGtaPRPZAQQIelAxKMZBUbEaOewEWZCHE9ZACt14Bf8gOrRpNcZBQT8msfVLNQwRAMRNpQWQ40ViVqZAcybV3ikrZBLzqv88lhkln1xz5U8JggEnaj23Iv1kKB1qqWq0xwrb6OaLZA5uZAQHq5R8ZD";
 
 
 		Elements elems =
@@ -41,7 +41,7 @@ public class FacebookExam {
 			String id = data.select("id").text();
 
 			// FIXIT
-			String reactions = "";
+			String reactions = data.select("reaction summary total_count").text();
 
 
 			output += id + "," + reactions + "\n";
